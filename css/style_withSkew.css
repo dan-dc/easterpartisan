@@ -1,0 +1,297 @@
+@import url("reset.css");
+@import url("fonts.css");
+/*************************************************************************
+
+	Easter Partisan Films
+	
+	Developed by Dan Moe 
+	for Design Culture - http://www.design-culture.co.uk/ (c) 2013
+	
+	MODULE: 	styles.scss
+	PURPOSE:	main site styles
+	
+*************************************************************************/
+/* CODE MAP
+-------------------------------------------------------------------------
+
+	^1	IMPORTS 
+	
+	^2	SASS VARIABLES 
+	
+	^3	STRUCTURE 
+	
+	^4	ROW BACKGROUNDS 
+	
+	^5	TEXT STYLES 
+		^5a main headers
+		^5b nav menu
+		^5c intro para
+		^5d body copy
+		^5e links
+		^5f oldbrowser / noscript alert
+
+
+/*	^1 IMPORTS
+*************************************************************************/
+/* ^2 SASS VARIABLES
+*************************************************************************/
+/*	^3 STRUCTURE
+*************************************************************************/
+html, body {
+  height: 100%;
+  font-family: "futura_maxi", Arial, Helvetica, sans-serif;
+  font-size: 1em;
+  background : black
+  }
+
+#nav {
+  width: 210px;
+  height: 100%;
+  padding: 30px;
+  background: white;
+  position: fixed;
+  z-index: 100; }
+
+#container {
+  margin-left: 270px;
+  max-width: 2280px;
+  min-width: 300px;
+  height: 100%; }
+
+.row {
+  height: 100%;
+  margin: 0 auto;
+  width: 100%;
+  position: relative; }
+
+article {
+  width: 70%;
+  position: absolute;
+  top: 151px;
+  /*background : rgba(255,255,255,0.5)*/ }
+
+article header {
+  min-height: 345px;
+  position: relative; }
+
+.seperator {
+  width: 250px;
+  height: 10px;
+  background: white;
+  position: absolute;
+  bottom: 0; }
+
+.content {
+  padding: 50px 0 0 250px;
+  max-width: 750px;
+  -webkit-columns: 2;
+  /* Safari and Chrome */
+  -moz-columns: 2;
+  /* Firefox */
+  columns: 2; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    color: #d53343; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+li a {
+  display: block;
+  padding: 8px 0;
+  color: #999; }
+
+strong {
+  font-family: "futura_maxi_bold", Arial, Helvetica, sans-serif;
+  font-weight: normal; }
+
+/*	^4 ROW BACKGROUNDS
+*************************************************************************/
+div#home {
+  background: url(../img/topboy.jpg) bottom right no-repeat;
+  background-size: cover; }
+
+/*div#about*/
+.about {
+  background: #da1a32 url(../img/cameraman.jpg) right 1300px no-repeat fixed;
+  background-size: contain; }
+
+div#about, div.news {
+  background: url(../img/grainy-texture.png) repeat; }
+
+div#gallery {
+  background: black url(../img/topboy2.jpg) center no-repeat;
+  background-size: cover; }
+
+div.ronan {
+  background: black url(../img/ronan.jpg) right 1300px no-repeat fixed;
+  background-size: contain; }
+
+div#contact {
+  background: url(../img/contact.jpg) center no-repeat fixed;
+  background-size: cover; }
+
+/*	^5 TEXT STYLES
+*************************************************************************/
+/* ^5a main headers */
+h1 {
+  font-family: "futura_maxi_bold", Arial, Helvetica, sans-serif;
+  font-size: 3.5em;
+  color: white;
+  display: inline-block;
+  position: relative;
+  font-weight: normal; }
+
+h1 b {
+  display: inline-block;
+  float: left;
+  clear: right;
+  padding: 0 15px 0 50px;
+  font-weight: normal; }
+
+h1 em {
+  display: inline-block;
+  position: relative;
+  margin-top: 10px;
+  float: left;
+  clear: both;
+  padding: 0 15px 0 50px; }
+
+h1 a {
+  display: block;
+  margin-bottom: 25px; }
+
+h1 a b {
+  display: none; }
+
+h1 .red {
+  background: #d53343; }
+
+h1 .black {
+  background: black; }
+
+h1 .grey {
+  background: #6d6e71; }
+
+h1 .white {
+  color: black;
+  background: white; }
+
+/* ^5b nav menu */
+#links {
+  font-family: "futura_maxi_light", Arial, Helvetica, sans-serif;
+  padding: 20px 0;
+  border-top: 10px solid #d53343;
+  border-bottom: 10px solid black; }
+
+/* ^5c intro para */
+article header p {
+  font-size: 1.3em;
+  color: white;
+  padding: 0 0 0 55px;
+  margin-top: 50px; }
+
+/* ^5d body copy */
+.content p {
+  margin-bottom: 1em;
+  font-size: 0.8em;
+  color: white; }
+
+.content p:first-child {
+  font-family: "futura_maxi_bold", Arial, Helvetica, sans-serif; }
+
+/* ^5e links */
+p a {
+  color: #d53343; }
+  p a:hover {
+    color: #6d6e71; }
+
+.prev {
+  height: 40px;
+  width: 40px;
+  display: block;
+  position: relative;
+  float: left;
+  text-align: center;
+  font-size: 2em;
+  top: 40px;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -moz-transform: rotate(90deg);
+  /* FF */
+  -webkit-transform: rotate(90deg);
+  /* Safari and Chrome */
+  left: -10px;
+  color: black; }
+
+.next.lightBG {
+  color: black; }
+  .next.lightBG:hover {
+    color: #d53343; }
+
+.next.redBG {
+  color: white; }
+  .next.redBG:hover {
+    color: black; }
+
+.next {
+  height: 40px;
+  width: 40px;
+  display: block;
+  position: relative;
+  float: left;
+  text-align: center;
+  font-size: 2em;
+  top: 40px;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -moz-transform: rotate(90deg);
+  /* FF */
+  -webkit-transform: rotate(90deg);
+  /* Safari and Chrome */
+  left: 45px;
+  color: white; }
+
+/* ^5f oldbrowser / noscript alert */
+p.alert {
+  background: black;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  position: fixed;
+  z-index: 200;
+  width: 100%; }
+
+/* Skew the container one way */
+.skew {
+  -webkit-transform: skewY(-4deg);
+  -moz-transform: skewY(-4deg);
+  -ms-transform: skewY(-4deg);
+  -o-transform: skewY(-4deg);
+  transform: skewY(-4deg);
+  position: absolute;
+  top: -80px; }
+
+.skewL {
+  -webkit-transform: skewY(4deg);
+  -moz-transform: skewY(4deg);
+  -ms-transform: skewY(4deg);
+  -o-transform: skewY(4deg);
+  transform: skewY(4deg);
+  position: absolute;
+  top: -80px; }
+
+/* And the immediate children the opposite 
+#about > * {
+    -webkit-transform: skewY(-170deg);
+    -moz-transform: skewY(-170deg);
+    -ms-transform: skewY(-170deg);
+    -o-transform: skewY(-170deg);
+    transform: skewY(-170deg);
+}*/

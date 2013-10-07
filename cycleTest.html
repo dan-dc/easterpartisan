@@ -1,0 +1,101 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/jquery-1.10.1.min.js"><\/script>')</script>
+<script src="js/plugins.min.js"></script>
+<script src="js/scripts.js"></script>
+
+
+<style>
+
+body {
+	margin : 0;
+}
+
+.gallery div {
+	width : 100%;
+}
+
+.red {
+	background : red;	
+}
+
+.yellow {
+	background : yellow;	
+}
+
+.green {
+	background : green;	
+}
+
+#control {
+	position : absolute;
+	z-index : 1000;	
+}
+
+#control a {
+	width : 30px;
+	height : 30px ;
+	border : 3px solid white;
+	display : inline-block;
+	text-indent:-9999px;
+	border-radius : 20px;
+	margin-right : 20px;
+}
+
+.activeSlide {
+	background : black;
+}
+
+#slideNav {
+	border : 1px solid black;
+	position : absolute;
+	left : 200px;
+	z-index : 1000;	
+}
+
+#slideNav a {
+	width : 50px;
+	height : 50px ;
+	display : inline-block;
+	border : 3px solid white;
+}
+
+#caption {
+	display : none;
+	visible : hidden;
+	position : absolute;
+	left : 500px;
+	z-index : 5000;
+	border : 5px solid white;
+	display : inline-block;
+}
+
+</style>
+
+</head>
+
+    <body>
+    
+        <div id="control"></div>
+        
+        <div id="slideNav">
+            <a href="" id="prev" class="slideControl">&laquo;</a>
+            <a href="" id="next" class="slideControl">&raquo;</a>
+        </div>
+        
+        <div id="caption"></div>
+        
+        <div class="gallery">
+            <div class="red" data-caption="Red means stop" ></div>
+            <div class="yellow" data-caption="Yellow means get ready" ></div>
+            <div class="green" data-caption="green means go" ></div>
+        </div>
+    
+    </body>
+
+</html>

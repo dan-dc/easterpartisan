@@ -1,0 +1,511 @@
+
+/*************************************************************************
+
+	Easter Partisan Films
+	
+	Developed by Dan Moe 
+	for Design Culture - http://www.design-culture.co.uk/ (c) 2013
+	
+	MODULE: 	styles.scss
+	PURPOSE:	main site styles
+	
+*************************************************************************/
+
+/* CODE MAP
+-------------------------------------------------------------------------
+
+	^1	IMPORTS 
+	
+	^2	SASS VARIABLES 
+	
+	^3	STRUCTURE 
+    ^3a gallery
+	
+	^4	ROW BACKGROUNDS 
+	
+	^5	TEXT STYLES 
+		^5a main headers
+		^5b nav menu
+		^5c intro para
+		^5d body copy
+		^5e links
+		^5f oldbrowser / noscript alert
+		^5g news stories
+		
+	^6 MEDIA QUERIES
+
+
+/*	^1 IMPORTS
+*************************************************************************/
+
+	@import url("reset.css");
+	@import url("fonts.css");
+	
+
+/* ^2 SASS VARIABLES
+*************************************************************************/
+
+// Colours
+	$Red : #d53343;
+	$Grey : #6d6e71;
+	$Black : #000;
+	$White : #FFF;
+	$Blue : #607890;
+
+// Vars
+	$futMaxiReg : 'futura_maxi', Arial, Helvetica, sans-serif;
+	$futMaxiLight : 'futura_maxi_light', Arial, Helvetica, sans-serif;
+	$futMaxiBold : 'futura_maxi_bold', Arial, Helvetica, sans-serif;
+
+// Mixins
+  @mixin headlineSpacing {
+    display : inline-block;
+    float : left;
+    padding : 0 15px 0 50px;    
+  }
+  
+	@mixin columns {
+		-webkit-columns : 2; /* Safari and Chrome */
+		-moz-columns : 2; /* Firefox */
+		columns : 2;
+	}
+	
+	@mixin rotate90deg {
+		transform:rotate(90deg);
+		-ms-transform:rotate(90deg); /* IE 9 */
+		-moz-transform:rotate(90deg); /* FF */
+		-webkit-transform:rotate(90deg); /* Safari and Chrome */
+	}
+	
+	@mixin arrows {
+		display : block;
+		position : relative;
+		height : 40px;
+		width : 40px;
+		top : 45px;
+		float : left;
+		text-align : center;
+		font-size : 2em;
+		@include rotate90deg;  
+	}
+	
+	@mixin bigArrows {
+    font-size : 12em;
+    color : $White;
+    line-height : 0.57em;
+    a {
+      color : $White;
+    }
+	}
+
+/*	^3 STRUCTURE
+*************************************************************************/
+
+  .defaultWindowSizeA {
+    width : 1366px;
+    height : 768px;
+    position : fixed;
+    z-index : 1000;
+    top : 0 ;
+    left : 0;
+    border : 1px solid yellow;
+  }
+
+  .defaultWindowSizeB {
+    width : 1024px;
+    height : 768px;
+    border : 1px solid blue;
+  }
+
+	html , body {
+		height : 100%;
+		font-family : $futMaxiReg;
+		font-size : 1em;
+	}
+	
+	#nav {
+		width : 210px;
+		height : 100%;
+		padding : 30px;
+		background : $White;	
+		position : fixed;
+		z-index : 100;
+	}
+	
+	#container {
+		margin-left : 270px;
+		max-width : 2280px;
+		min-width : 300px;
+		height : 100%;
+	}
+	
+	.row {
+		height: 100%;  
+		margin: 0 auto;
+		width: 100%; 
+		position: relative; 
+	}
+	
+	article {
+		//width : 70%;
+		position: absolute;
+		top: 151px;
+		//background : rgba(255,255,255,0.5)
+	}
+	
+	article header {
+		min-height : 343px; 
+		position : relative; 
+	}
+	
+	.seperator {
+		width : 250px;
+		height : 10px;
+		background : $White;
+		position : absolute;
+		bottom : 0;
+	}
+	
+	.content {
+		padding : 60px 0 0 250px ;
+	}
+	
+	.two-column {
+    @include columns;
+    padding : 60px 0 0 210px ;
+    max-width : 710px;
+	}
+	
+	.carousel-wrap {
+	  position : relative;
+	}
+	.carousel {
+	  //border : 1px solid blue;
+	  //width : 80%;
+	  overflow : hidden;
+	}
+
+	.carousel li {
+	  display : block;
+	  padding : 1em;
+	  max-width : 400px;
+    background : $White;
+	  background : rgba(255,255,255,0.5);
+	  float : left;
+	  margin : 0 1em 1em 0;
+	}
+	
+  .next-carousel,
+  .prev-carousel {
+    @include bigArrows;
+    position : absolute;
+    z-index : 20;
+    background : $Black;
+    background : rgba(0,0,0,0.9);
+  }
+  
+  .prev-carousel {
+    left : 0;
+  }	
+
+  .next-carousel {
+    left : -250px;
+    top : 75px;
+  } 
+  
+	a {
+		text-decoration : none;
+		&:hover {
+			color : $Red; 
+		}
+	}
+	
+	ul {
+		list-style : none;
+		padding : 0;
+		margin : 0;
+	}
+	
+	li a {
+		display : block;
+		padding : 8px 0;	
+		color : #999;
+	}
+	
+	strong {
+		font-family : $futMaxiBold;
+		font-weight : normal;
+	}
+	
+//  ^3a gallery
+  #gallery article {
+    z-index : 10;
+  }
+
+  #gallery-content {
+    height : 120px;
+    padding-left : 175px;
+    background : $Black;
+    background : rgba( $Black, 0.7 );
+    margin-top : 130px;
+    position : relative;
+  }
+  
+  #caption {
+    //border : 1px solid white;
+    width : 530px;
+    float : right;
+    padding : 20px 0 0 0;
+    font-size : 0.8em;
+    color : $White;
+  }
+  
+  #control {
+   // border : 1px solid white;
+    position : absolute;
+    bottom : 15px;
+    left : 30%;
+  }
+
+  .gallery div {
+    width : 100%;
+  }
+  
+  .red {
+    background : red; 
+  }
+  
+  .yellow {
+    background : yellow;  
+  }
+  
+  .green {
+    background : green; 
+  }
+
+  .purple {
+    background : purple; 
+  }
+  
+  #control a {
+    width : 10px;
+    height : 10px ;
+    border : 2px solid white;
+    display : inline-block;
+    text-indent :-9999px;
+    border-radius : 10px;
+    margin-right : 10px;
+  }
+  
+  .activeSlide {
+    background : $Red;
+  }
+  
+  #slideNav {
+    //border : 1px solid black;
+    //position : absolute;
+    //left : 200px;
+    //z-index : 20;
+  }
+  
+  .slideControl {
+    @include bigArrows;
+  }
+  
+  .prev-gallery {
+    float : left;
+  }
+
+  .next-gallery {
+    float : right;
+  }
+
+
+
+/*	^4 ROW BACKGROUNDS
+*************************************************************************/
+
+	div#home { 
+		background: url(../img/topboy.jpg) bottom right no-repeat fixed;
+		background-size : cover;
+	}
+	
+	div#about { 
+		background: #da1a32 url(../img/cameraman.jpg) bottom right no-repeat fixed;
+		background-size : contain;
+	}
+	
+	div#news { 
+		background: url(../img/grainy-texture.png) repeat ;
+	}
+	
+	div#gallery {
+		background: $Black ; //url(../img/topboy2.jpg) center no-repeat;
+		//background-size : cover;
+	}
+	
+	div#ronan { 
+		background: $Black url(../img/ronan.jpg) bottom right no-repeat fixed;
+		background-size : contain;
+	}
+	
+	div#contact { 
+		background : url(../img/contact.jpg) center no-repeat fixed;
+		background-size : cover;
+	}
+
+/*	^5 TEXT STYLES
+*************************************************************************/
+	
+	h1, h2, h3, h4, h5, h6 {
+    font-family : $futMaxiBold; 
+    font-weight : normal;
+	}
+	
+// ^5a main headers
+	h1 {
+		font-size : 3.5em ;
+		color : $White;
+		display : inline-block;
+		position : relative;
+	}
+	
+	h1 b {
+		clear : right;
+		font-weight : normal;
+		@include headlineSpacing;
+	}
+	
+	h1 em {
+	  margin-top : 10px;
+		clear : both;
+    @include headlineSpacing;
+	}
+	
+	h1 a {
+		display : block;
+		margin-bottom : 25px;
+	}
+	
+	h1 a b {
+		display : none;
+	}
+	
+	h1 .red {
+		background : $Red;
+	}
+	
+	h1 .black {
+		background : $Black;
+	}
+	
+	h1 .grey {
+		background : $Grey;
+	}
+	
+	h1 .white {
+		color : $Black;
+		background : $White;
+	}
+
+// ^5b nav menu
+	#links { 
+		font-family : $futMaxiLight;  
+		padding : 20px 0;
+		border-top : 10px solid $Red;
+		border-bottom : 10px solid $Black;
+	}
+	
+// ^5c intro para
+	article header p {
+		font-size : 1.3em;
+		color : $White;
+		padding : 0 0 0 55px;
+		margin-top : 50px;
+	}
+
+// ^5d body copy
+	.content p {
+		margin-bottom : 1em;
+		font-size : 0.8em;
+		color : $White;
+	}
+	
+  .blackText p {
+    color : $Black;
+  }
+
+	.content p:first-child {
+		font-family : $futMaxiBold;  
+	}
+	
+// ^5e links
+	p a {
+		color : $Red;
+		&:hover {
+			color : $Grey;
+		}
+	}
+	
+	.prev {
+		@include arrows;
+		left : -10px;
+		color : $Black;
+	}
+
+	.next.lightBG {
+		color : $Black;
+		&:hover {
+			color : $Red;
+		}
+	}
+
+	.next.redBG {
+		color : $White;
+		&:hover {
+			color : $Black;
+		}
+	}
+	
+	.next {
+		@include arrows;
+		left : 45px;
+		color : $White;
+	}
+	
+// ^5f oldbrowser / noscript alert
+	p.alert {
+		background : $Black;
+		padding : 10px 0;
+		text-align : center;
+		color : $White;
+		position : fixed;	
+		z-index : 200;
+		width : 100%
+	}
+	
+// ^5g news stories
+	h3 + p {
+    font-family : $futMaxiBold;  
+    font-size : 0.6em !important;
+    padding-top : 5px;
+    margin-bottom : 20px !important;
+	}
+	
+	 h3 + p + p {
+    font-family : $futMaxiBold;  
+	 }
+
+
+/*  ^6 MEDIA QUERIES
+*************************************************************************/
+
+@media screen and (max-width: 1500px) {
+  section {
+    width : 40%;
+  }
+  
+  #news {
+    //overflow-y : scroll;  
+  }
+}

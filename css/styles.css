@@ -1,0 +1,395 @@
+@import url("reset.css");
+@import url("fonts.css");
+/*************************************************************************
+
+	Easter Partisan Films
+	
+	Developed by Dan Moe 
+	for Design Culture - http://www.design-culture.co.uk/ (c) 2013
+	
+	MODULE: 	styles.scss
+	PURPOSE:	main site styles
+	
+*************************************************************************/
+/* CODE MAP
+-------------------------------------------------------------------------
+
+	^1	IMPORTS 
+	
+	^2	SASS VARIABLES 
+	
+	^3	STRUCTURE 
+    ^3a gallery
+	
+	^4	ROW BACKGROUNDS 
+	
+	^5	TEXT STYLES 
+		^5a main headers
+		^5b nav menu
+		^5c intro para
+		^5d body copy
+		^5e links
+		^5f oldbrowser / noscript alert
+		^5g news stories
+		
+	^6 MEDIA QUERIES
+
+
+/*	^1 IMPORTS
+*************************************************************************/
+/* ^2 SASS VARIABLES
+*************************************************************************/
+/*	^3 STRUCTURE
+*************************************************************************/
+.defaultWindowSizeA {
+  width: 1366px;
+  height: 768px;
+  position: fixed;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  border: 1px solid yellow; }
+
+.defaultWindowSizeB {
+  width: 1024px;
+  height: 768px;
+  border: 1px solid blue; }
+
+html, body {
+  height: 100%;
+  font-family: "futura_maxi", Arial, Helvetica, sans-serif;
+  font-size: 1em; }
+
+#nav {
+  width: 210px;
+  height: 100%;
+  padding: 30px;
+  background: white;
+  position: fixed;
+  z-index: 100; }
+
+#container {
+  margin-left: 270px;
+  max-width: 2280px;
+  min-width: 300px;
+  height: 100%; }
+
+.row {
+  height: 100%;
+  margin: 0 auto;
+  width: 100%;
+  position: relative; }
+
+article {
+  position: absolute;
+  top: 151px; }
+
+article header {
+  min-height: 343px;
+  position: relative; }
+
+.seperator {
+  width: 250px;
+  height: 10px;
+  background: white;
+  position: absolute;
+  bottom: 0; }
+
+.content {
+  padding: 60px 0 0 250px; }
+
+.two-column {
+  -webkit-columns: 2;
+  /* Safari and Chrome */
+  -moz-columns: 2;
+  /* Firefox */
+  columns: 2;
+  padding: 60px 0 0 210px;
+  max-width: 710px; }
+
+.carousel-wrap {
+  position: relative; }
+
+.carousel {
+  overflow: hidden; }
+
+.carousel li {
+  display: block;
+  padding: 1em;
+  max-width: 400px;
+  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  float: left;
+  margin: 0 1em 1em 0; }
+
+.next-carousel,
+.prev-carousel {
+  font-size: 12em;
+  color: white;
+  line-height: 0.57em;
+  position: absolute;
+  z-index: 20;
+  background: black;
+  background: rgba(0, 0, 0, 0.9); }
+  .next-carousel a,
+  .prev-carousel a {
+    color: white; }
+
+.prev-carousel {
+  left: 0; }
+
+.next-carousel {
+  left: -250px;
+  top: 75px; }
+
+a {
+  text-decoration: none; }
+  a:hover {
+    color: #d53343; }
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+
+li a {
+  display: block;
+  padding: 8px 0;
+  color: #999; }
+
+strong {
+  font-family: "futura_maxi_bold", Arial, Helvetica, sans-serif;
+  font-weight: normal; }
+
+#gallery article {
+  z-index: 10; }
+
+#gallery-content {
+  height: 120px;
+  padding-left: 175px;
+  background: black;
+  background: rgba(0, 0, 0, 0.7);
+  margin-top: 130px;
+  position: relative; }
+
+#caption {
+  width: 530px;
+  float: right;
+  padding: 20px 0 0 0;
+  font-size: 0.8em;
+  color: white; }
+
+#control {
+  position: absolute;
+  bottom: 15px;
+  left: 30%; }
+
+.gallery div {
+  width: 100%; }
+
+.red {
+  background: red; }
+
+.yellow {
+  background: yellow; }
+
+.green {
+  background: green; }
+
+.purple {
+  background: purple; }
+
+#control a {
+  width: 10px;
+  height: 10px;
+  border: 2px solid white;
+  display: inline-block;
+  text-indent: -9999px;
+  border-radius: 10px;
+  margin-right: 10px; }
+
+.activeSlide {
+  background: #d53343; }
+
+.slideControl {
+  font-size: 12em;
+  color: white;
+  line-height: 0.57em; }
+  .slideControl a {
+    color: white; }
+
+.prev-gallery {
+  float: left; }
+
+.next-gallery {
+  float: right; }
+
+/*	^4 ROW BACKGROUNDS
+*************************************************************************/
+div#home {
+  background: url(../img/topboy.jpg) bottom right no-repeat fixed;
+  background-size: cover; }
+
+div#about {
+  background: #da1a32 url(../img/cameraman.jpg) bottom right no-repeat fixed;
+  background-size: contain; }
+
+div#news {
+  background: url(../img/grainy-texture.png) repeat; }
+
+div#gallery {
+  background: black; }
+
+div#ronan {
+  background: black url(../img/ronan.jpg) bottom right no-repeat fixed;
+  background-size: contain; }
+
+div#contact {
+  background: url(../img/contact.jpg) center no-repeat fixed;
+  background-size: cover; }
+
+/*	^5 TEXT STYLES
+*************************************************************************/
+h1, h2, h3, h4, h5, h6 {
+  font-family: "futura_maxi_bold", Arial, Helvetica, sans-serif;
+  font-weight: normal; }
+
+h1 {
+  font-size: 3.5em;
+  color: white;
+  display: inline-block;
+  position: relative; }
+
+h1 b {
+  clear: right;
+  font-weight: normal;
+  display: inline-block;
+  float: left;
+  padding: 0 15px 0 50px; }
+
+h1 em {
+  margin-top: 10px;
+  clear: both;
+  display: inline-block;
+  float: left;
+  padding: 0 15px 0 50px; }
+
+h1 a {
+  display: block;
+  margin-bottom: 25px; }
+
+h1 a b {
+  display: none; }
+
+h1 .red {
+  background: #d53343; }
+
+h1 .black {
+  background: black; }
+
+h1 .grey {
+  background: #6d6e71; }
+
+h1 .white {
+  color: black;
+  background: white; }
+
+#links {
+  font-family: "futura_maxi_light", Arial, Helvetica, sans-serif;
+  padding: 20px 0;
+  border-top: 10px solid #d53343;
+  border-bottom: 10px solid black; }
+
+article header p {
+  font-size: 1.3em;
+  color: white;
+  padding: 0 0 0 55px;
+  margin-top: 50px; }
+
+.content p {
+  margin-bottom: 1em;
+  font-size: 0.8em;
+  color: white; }
+
+.blackText p {
+  color: black; }
+
+.content p:first-child {
+  font-family: "futura_maxi_bold", Arial, Helvetica, sans-serif; }
+
+p a {
+  color: #d53343; }
+  p a:hover {
+    color: #6d6e71; }
+
+.prev {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  top: 45px;
+  float: left;
+  text-align: center;
+  font-size: 2em;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -moz-transform: rotate(90deg);
+  /* FF */
+  -webkit-transform: rotate(90deg);
+  /* Safari and Chrome */
+  left: -10px;
+  color: black; }
+
+.next.lightBG {
+  color: black; }
+  .next.lightBG:hover {
+    color: #d53343; }
+
+.next.redBG {
+  color: white; }
+  .next.redBG:hover {
+    color: black; }
+
+.next {
+  display: block;
+  position: relative;
+  height: 40px;
+  width: 40px;
+  top: 45px;
+  float: left;
+  text-align: center;
+  font-size: 2em;
+  transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  /* IE 9 */
+  -moz-transform: rotate(90deg);
+  /* FF */
+  -webkit-transform: rotate(90deg);
+  /* Safari and Chrome */
+  left: 45px;
+  color: white; }
+
+p.alert {
+  background: black;
+  padding: 10px 0;
+  text-align: center;
+  color: white;
+  position: fixed;
+  z-index: 200;
+  width: 100%; }
+
+h3 + p {
+  font-family: "futura_maxi_bold", Arial, Helvetica, sans-serif;
+  font-size: 0.6em !important;
+  padding-top: 5px;
+  margin-bottom: 20px !important; }
+
+h3 + p + p {
+  font-family: "futura_maxi_bold", Arial, Helvetica, sans-serif; }
+
+/*  ^6 MEDIA QUERIES
+*************************************************************************/
+@media screen and (max-width: 1500px) {
+  section {
+    width: 40%; } }

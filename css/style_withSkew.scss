@@ -1,0 +1,344 @@
+
+/*************************************************************************
+
+	Easter Partisan Films
+	
+	Developed by Dan Moe 
+	for Design Culture - http://www.design-culture.co.uk/ (c) 2013
+	
+	MODULE: 	styles.scss
+	PURPOSE:	main site styles
+	
+*************************************************************************/
+
+/* CODE MAP
+-------------------------------------------------------------------------
+
+	^1	IMPORTS 
+	
+	^2	SASS VARIABLES 
+	
+	^3	STRUCTURE 
+	
+	^4	ROW BACKGROUNDS 
+	
+	^5	TEXT STYLES 
+		^5a main headers
+		^5b nav menu
+		^5c intro para
+		^5d body copy
+		^5e links
+		^5f oldbrowser / noscript alert
+
+
+/*	^1 IMPORTS
+*************************************************************************/
+
+	@import url("reset.css");
+	@import url("fonts.css");
+	
+
+/* ^2 SASS VARIABLES
+*************************************************************************/
+
+// Colours
+	$Red : #d53343;
+	$Grey : #6d6e71;
+	$Black : #000;
+	$White : #FFF;
+	$Blue : #607890;
+
+// Vars
+	$futMaxiReg : 'futura_maxi', Arial, Helvetica, sans-serif;
+	$futMaxiLight : 'futura_maxi_light', Arial, Helvetica, sans-serif;
+	$futMaxiBold : 'futura_maxi_bold', Arial, Helvetica, sans-serif;
+
+// Mixins
+	@mixin columns {
+		-webkit-columns : 2; /* Safari and Chrome */
+		-moz-columns : 2; /* Firefox */
+		columns : 2;
+	}
+	
+	@mixin rotate90deg {
+		transform:rotate(90deg);
+		-ms-transform:rotate(90deg); /* IE 9 */
+		-moz-transform:rotate(90deg); /* FF */
+		-webkit-transform:rotate(90deg); /* Safari and Chrome */
+	}
+	
+	@mixin arrows {
+		height : 40px;
+		width : 40px;
+		display : block;
+		position : relative;
+		float : left;
+		text-align : center;
+		font-size : 2em;
+		top : 40px;
+		@include rotate90deg;  
+	}
+
+/*	^3 STRUCTURE
+*************************************************************************/
+
+	html , body {
+		height : 100%;
+		font-family : $futMaxiReg;
+		font-size : 1em;
+	}
+	
+	#nav {
+		width : 210px;
+		height : 100%;
+		padding : 30px;
+		background : $White;	
+		position : fixed;
+		z-index : 100;
+	}
+	
+	#container {
+		margin-left : 270px;
+		max-width : 2280px;
+		min-width : 300px;
+		height : 100%;
+	}
+	
+	.row {
+		height: 100%;  
+		margin: 0 auto;
+		width: 100%; 
+		position: relative; 
+	}
+	
+	article {
+		width : 70%;
+		position: absolute;
+		top: 151px;
+		/*background : rgba(255,255,255,0.5)*/
+	}
+	
+	article header {
+		min-height : 345px; 
+		position : relative; 
+	}
+	
+	.seperator {
+		width : 250px;
+		height : 10px;
+		background : $White;
+		position : absolute;
+		bottom : 0;
+	}
+	
+	.content {
+		padding : 50px 0 0 250px ;
+		max-width : 750px;
+		@include columns;
+	}
+	
+	a {
+		text-decoration : none;
+		&:hover {
+			color : $Red; 
+		}
+	}
+	
+	ul {
+		list-style : none;
+		padding : 0;
+		margin : 0;
+	}
+	
+	li a {
+		display : block;
+		padding : 8px 0;	
+		color : #999;
+	}
+	
+	strong {
+		font-family : $futMaxiBold;
+		font-weight : normal;
+	}
+
+/*	^4 ROW BACKGROUNDS
+*************************************************************************/
+
+	div#home { 
+		background: url(../img/topboy.jpg) bottom right no-repeat ;
+		background-size : cover;
+	}
+	
+	/*div#about*/ .skew { 
+		background: #da1a32 url(../img/cameraman.jpg) right no-repeat;
+		background-size : contain;
+	}
+	
+	div#about, div#news { 
+		background: url(../img/grainy-texture.png) repeat ;
+	}
+	
+	div#gallery {
+		background: $Black url(../img/topboy2.jpg) center no-repeat;
+		background-size : cover;
+	}
+	
+	div#ronan { 
+		background: $Black url(../img/ronan.jpg) bottom right no-repeat fixed;
+		background-size : contain;
+	}
+	
+	div#contact { 
+		background : url(../img/contact.jpg) center no-repeat fixed;
+		background-size : cover;
+	}
+
+/*	^5 TEXT STYLES
+*************************************************************************/
+	
+	/* ^5a main headers */
+	h1 {
+		font-family : $futMaxiBold;	
+		font-size : 3.5em ;
+		color : $White;
+		display : inline-block;
+		position : relative;
+		font-weight : normal;
+	}
+	
+	h1 b {
+		display : inline-block;
+		float : left;
+		clear : right;
+		padding : 0 15px 0 50px;
+		font-weight : normal;
+	}
+	
+	h1 em {
+		display : inline-block;
+		position : relative;
+		margin-top : 10px;
+		float : left;
+		clear : both;
+		padding : 0 15px 0 50px;
+	}
+	
+	h1 a {
+		display : block;
+		margin-bottom : 25px;
+	}
+	
+	h1 a b {
+		display : none;
+	}
+	
+	h1 .red {
+		background : $Red;
+	}
+	
+	h1 .black {
+		background : $Black;
+	}
+	
+	h1 .grey {
+		background : $Grey;
+	}
+	
+	h1 .white {
+		color : $Black;
+		background : $White;
+	}
+	
+	/* ^5b nav menu */
+	#links { 
+		font-family : $futMaxiLight;  
+		padding : 20px 0;
+		border-top : 10px solid $Red;
+		border-bottom : 10px solid $Black;
+	}
+	
+	/* ^5c intro para */
+	article header p {
+		font-size : 1.3em;
+		color : $White;
+		padding : 0 0 0 55px;
+		margin-top : 50px;
+	}
+
+	/* ^5d body copy */
+	.content p {
+		margin-bottom : 1em;
+		font-size : 0.8em;
+		color : $White;
+	}
+	
+	.content p:first-child {
+		font-family : $futMaxiBold;  
+	}
+	
+	/* ^5e links */
+	p a {
+		color : $Red;
+		&:hover {
+			color : $Grey;
+		}
+	}
+	
+	.prev {
+		@include arrows;
+		left : -10px;
+		color : $Black;
+	}
+
+	.next.lightBG {
+		color : $Black;
+		&:hover {
+			color : $Red;
+		}
+	}
+
+	.next.redBG {
+		color : $White;
+		&:hover {
+			color : $Black;
+		}
+	}
+	
+	.next {
+		@include arrows;
+		left : 45px;
+		color : $White;
+	}
+	
+	/* ^5f oldbrowser / noscript alert */
+	p.alert {
+		background : $Black;
+		padding : 10px 0;
+		text-align : center;
+		color : $White;
+		position : fixed;	
+		z-index : 200;
+		width : 100%
+	}
+
+
+/* Skew the container one way */
+.skew {
+    -webkit-transform: skewY(170deg);
+    -moz-transform: skewY(170deg);
+    -ms-transform: skewY(170deg);
+    -o-transform: skewY(170deg);
+    transform: skewY(170deg);
+	position : absolute;
+	top : -200px;
+}
+
+
+/* And the immediate children the opposite 
+#about > * {
+    -webkit-transform: skewY(-170deg);
+    -moz-transform: skewY(-170deg);
+    -ms-transform: skewY(-170deg);
+    -o-transform: skewY(-170deg);
+    transform: skewY(-170deg);
+}*/
