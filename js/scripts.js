@@ -341,7 +341,7 @@ $(document).ready(function() {
 			$('html, body').animate({ scrollTop: $('.current').offset().top }, 300, scrollPageEasing);
 		}
 		*/
-		alert('yep')
+//		alert('yep')
 	});
 
 /**********************************************************************************************

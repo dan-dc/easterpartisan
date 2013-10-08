@@ -211,6 +211,19 @@
 	                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy<br/> nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi<br/> enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit.</p>
 	                    <div class="seperator">&nbsp;</div>
                     </header>
+                    <form id="contactForm" action="" class="content">
+                       <div><input id="name" type="text" name="name" placeholder="Name" class="regular required"/></div>
+                       <div><input id="email" type="email" name="email" placeholder="Email" class="regular required"/></div>
+                       <div><textarea name="message" id="message" cols="30" rows="10" placeholder="Message" class="required"></textarea></div>
+                       <input id="submitContact" type="submit" name="send" value="Send" class="sendBtn">
+                    </form>
+                    <ul id="socialLinks">
+                        <li><a href="" class="phone">by phone</a></li>
+                        <li><a href="" class="email">by email</a></li>
+                        <li><a href="" class="twitter">via twitter</a></li>
+                        <li><a href="" class="facebook">via facebook</a></li>
+                        <li><a href="" class="linkedin">via linkedin</a></li>
+                    </ul>
                 </article>
             </div>
             
@@ -221,6 +234,15 @@
         <script>window.jQuery || document.write('<script src="js/jquery-1.10.1.min.js"><\/script>')</script>
         <script src="js/plugins.min.js"></script>
         <script src="js/scripts.js"></script>
+        <script src="js/jquery.validate.min.js"></script>
+        <script src="js/jquery.placeholder.min.js"></script>
+        <script>
+            $("#contactForm").validate();
+            $(document).ready(function(){
+                // To force placeholder on IE
+                $.Placeholder.init(); // custom placeholder text color
+            });
+        </script>
         
 <!--	google analytics -->
         <script>

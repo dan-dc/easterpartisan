@@ -20,6 +20,7 @@
 	
 	^3	STRUCTURE 
     ^3a gallery
+    ^3b contact
 	
 	^4	ROW BACKGROUNDS 
 	
@@ -58,11 +59,11 @@
 	$futMaxiBold : 'futura_maxi_bold', Arial, Helvetica, sans-serif;
 
 // Mixins
-  @mixin headlineSpacing {
-    display : inline-block;
-    float : left;
-    padding : 0 15px 0 50px;    
-  }
+    @mixin headlineSpacing {
+        display : inline-block;
+        float : left;
+        padding : 0 15px 0 50px;    
+    }
   
 	@mixin columns {
 		-webkit-columns : 2; /* Safari and Chrome */
@@ -90,12 +91,12 @@
 	}
 	
 	@mixin bigArrows {
-    font-size : 12em;
-    color : $White;
-    line-height : 0.57em;
-    a {
-      color : $White;
-    }
+        font-size : 12em;
+        color : $White;
+        line-height : 0.57em;
+        a {
+        	color : $White;
+        }
 	}
 
 /*	^3 STRUCTURE
@@ -320,6 +321,81 @@
     float : right;
   }
 
+//  ^3b contact
+	#contact { 
+		header p {
+            background : $White;
+            background : rgba(255,255,255,0.6);
+            color: $Black;
+            padding: 20px 20px 20px 55px;
+    	}
+    	form {
+            float: left;
+            width: 420px;
+            div {
+            	position: relative;
+            	label.error {
+            		position: absolute;
+                    top: 10px;
+                    right: 6px;
+                    font-size: 0.8em;
+                    color: $Red;
+                    font-style: italic;
+            	}
+        	}
+            input {
+                &.regular {
+                    border: none;
+                    width: 97%;
+                    margin-bottom: 1em;
+                    padding: 6px 9px;
+                    font-family: $futMaxiLight;
+                }
+                &.sendBtn {
+                    background: $Red;
+                    width: 120px;
+                    height: 34px;
+                    color: #fff;
+                    font-size: 14px;
+                    font-family: $futMaxiLight;
+                    border: none;
+                    margin-top: 15px;
+                }
+            }
+    	}
+    	textarea {
+            border: none;
+            width: 97%;
+            font-family: $futMaxiLight;
+            padding: 6px 9px;
+            height: 176px;
+    	}
+    	#socialLinks {
+    		border-left: 1px solid $White;
+    		float: right;
+    		font-size: 0.75em;
+    		margin: 60px 0 0 30px;
+    		padding: 0 0 0 30px;
+    		li {
+    			margin-bottom: 10px;
+    			a {
+                    background: transparent no-repeat top left;
+                    color: $White;
+                    height: 29px;
+                    padding: 18px 0 0 60px;
+                    font-family: $futMaxiLight;
+                    &:hover {
+                        background-position: 0 -47px;
+                    }
+                    &.phone { background-image: url(../img/ico_phone.png) }
+                    &.email { background-image: url(../img/ico_email.png) }
+                    &.twitter { background-image: url(../img/ico_twitter.png) }
+                    &.facebook { background-image: url(../img/ico_facebook.png) }
+                    &.linkedin { background-image: url(../img/ico_linkedin.png) }
+        		}
+        	}
+    	}
+	}
 
 
 /*	^4 ROW BACKGROUNDS

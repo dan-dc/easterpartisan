@@ -20,6 +20,7 @@
 	
 	^3	STRUCTURE 
     ^3a gallery
+    ^3b contact
 	
 	^4	ROW BACKGROUNDS 
 	
@@ -223,6 +224,71 @@ strong {
 
 .next-gallery {
   float: right; }
+
+#contact header p {
+  background: white;
+  background: rgba(255, 255, 255, 0.6);
+  color: black;
+  padding: 20px 20px 20px 55px; }
+#contact form {
+  float: left;
+  width: 420px; }
+  #contact form div {
+    position: relative; }
+    #contact form div label.error {
+      position: absolute;
+      top: 10px;
+      right: 6px;
+      font-size: 0.8em;
+      color: #d53343;
+      font-style: italic; }
+  #contact form input.regular {
+    border: none;
+    width: 97%;
+    margin-bottom: 1em;
+    padding: 6px 9px;
+    font-family: "futura_maxi_light", Arial, Helvetica, sans-serif; }
+  #contact form input.sendBtn {
+    background: #d53343;
+    width: 120px;
+    height: 34px;
+    color: #fff;
+    font-size: 14px;
+    font-family: "futura_maxi_light", Arial, Helvetica, sans-serif;
+    border: none;
+    margin-top: 15px; }
+#contact textarea {
+  border: none;
+  width: 97%;
+  font-family: "futura_maxi_light", Arial, Helvetica, sans-serif;
+  padding: 6px 9px;
+  height: 176px; }
+#contact #socialLinks {
+  border-left: 1px solid white;
+  float: right;
+  font-size: 0.75em;
+  margin: 60px 0 0 30px;
+  padding: 0 0 0 30px; }
+  #contact #socialLinks li {
+    margin-bottom: 10px; }
+    #contact #socialLinks li a {
+      background: transparent no-repeat top left;
+      color: white;
+      height: 29px;
+      padding: 18px 0 0 60px;
+      font-family: "futura_maxi_light", Arial, Helvetica, sans-serif; }
+      #contact #socialLinks li a:hover {
+        background-position: 0 -47px; }
+      #contact #socialLinks li a.phone {
+        background-image: url(../img/ico_phone.png); }
+      #contact #socialLinks li a.email {
+        background-image: url(../img/ico_email.png); }
+      #contact #socialLinks li a.twitter {
+        background-image: url(../img/ico_twitter.png); }
+      #contact #socialLinks li a.facebook {
+        background-image: url(../img/ico_facebook.png); }
+      #contact #socialLinks li a.linkedin {
+        background-image: url(../img/ico_linkedin.png); }
 
 /*	^4 ROW BACKGROUNDS
 *************************************************************************/
