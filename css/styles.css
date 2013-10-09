@@ -64,10 +64,28 @@ html, body {
 #nav {
   width: 210px;
   height: 100%;
-  padding: 30px;
+  min-height: 740px;
+  padding: 30px 30px 0 30px;
   background: white;
   position: fixed;
   z-index: 100; }
+  #nav #contactInfo {
+    border-bottom: 10px solid #d53343;
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    padding: 0;
+    margin: 0 0 30px 0;
+    font-size: 0.7em;
+    line-height: 1.4em;
+    width: 210px; }
+    #nav #contactInfo p {
+      margin-bottom: 1em; }
+      #nav #contactInfo p.tel {
+        font-size: 1.3em; }
+    #nav #contactInfo b, #nav #contactInfo strong {
+      font-family: "futura_maxi_bold", Arial, Helvetica, sans-serif;
+      font-weight: normal; }
 
 #container {
   margin-left: 270px;
@@ -105,7 +123,7 @@ article header {
   -moz-columns: 2;
   /* Firefox */
   columns: 2;
-  padding: 60px 0 0 210px;
+  padding: 60px 55px 0 210px;
   max-width: 710px; }
 
 .carousel-wrap {
@@ -298,21 +316,25 @@ div#home {
 
 div#about {
   background: #da1a32 url(../img/cameraman.jpg) bottom right no-repeat fixed;
-  background-size: contain; }
+  background-size: contain;
+  min-height: 880px; }
 
 div#news {
-  background: url(../img/grainy-texture.png) repeat; }
+  background: url(../img/grainy-texture.png) repeat;
+  min-height: 980px; }
 
 div#gallery {
   background: black; }
 
 div#ronan {
   background: black url(../img/ronan.jpg) bottom right no-repeat fixed;
-  background-size: contain; }
+  background-size: contain;
+  min-height: 880px; }
 
 div#contact {
   background: url(../img/contact.jpg) center no-repeat fixed;
-  background-size: cover; }
+  background-size: cover;
+  min-height: 980px; }
 
 /*	^5 TEXT STYLES
 *************************************************************************/
@@ -369,8 +391,9 @@ h1 .white {
 article header p {
   font-size: 1.3em;
   color: white;
-  padding: 0 0 0 55px;
-  margin-top: 50px; }
+  padding: 0 55px;
+  margin-top: 50px;
+  max-width: 855px; }
 
 .content p {
   margin-bottom: 1em;
@@ -456,6 +479,3 @@ h3 + p + p {
 
 /*  ^6 MEDIA QUERIES
 *************************************************************************/
-@media screen and (max-width: 1500px) {
-  section {
-    width: 40%; } }
